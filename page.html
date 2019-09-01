@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+ <style>
+      body{
+            text-align:center;
+            background-color:#339999;
+        }
+      .container{
+             margin: 300px auto;
+             border:1px white solid;
+             display:inline-block;
+             padding:3px;
+             border-radius:2px;
+         }
+ </style>
+        
+  </head>
+  <body>
+    <div class="container">
+        <input type="text"  id="uname" placeholder="Enter name" style="font-size:16pt;" required autocomplete="off"/><br><br>
+        <input type="email"  id="umail" placeholder="Enter mail" style="font-size:16pt;" required autocomplete="off" /><br><br>
+        <input type="tel"  id="fno" placeholder="Phone No"  style="font-size:16pt;" required autocomplete="off"/><br><br>
+        <input type="submit" onclick= doStuff() value="submit" style="font-size:16pt;"/>  
+    </div>
+   
+    <script>
+    document.getElementById("but").addEventListener("click",doStuff);
+    
+    function doStuff(){
+    let name = document.getElementById("uname").value;
+    let mail = document.getElementById("umail").value;
+    let fon = document.getElementById("fno").value;
+    
+    google.script.run.Foo(name,mail,fon);
+    document.getElementById("uname").value="";
+    document.getElementById("umail").value="";
+    document.getElementById("fno").value="";
+    }
+    
+    </script>
+  </body>
+</html>
+
+

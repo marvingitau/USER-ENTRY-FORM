@@ -1,0 +1,28 @@
+function doGet(e) {
+  //Logger.log(e);
+  return HtmlService.createHtmlOutputFromFile("page");
+}
+
+function Foo(arg,mail,no){
+  var adminMail="marvingitau96@gmail.com";
+  var url = "https://docs.google.com/spreadsheets/d/123iCAHGTP7MV_a0kg-pbM34S_EiVQqdyZ9Ph_brnxHs/edit#gid=0";
+  var ss = SpreadsheetApp.openByUrl(url);
+  var sn = ss.getSheetByName("data");
+  sn.appendRow([arg,mail,no]);
+  sendMailsToAdmin(arg,adminMail);
+  sendMailsToUser(mail);
+  //Logger.log(arg+" have clicked the button");  
+}
+ 
+function sendMailsToAdmin(arg,emailAddress){
+  var subject="a record added";
+  var msg = arg+" Added a record";
+  MailApp.sendEmail(emailAddress, subject, msg);
+  
+}
+function sendMailsToUser(emailAddress){
+  var subject="a record added";
+  var msg = "You Added a record";
+  MailApp.sendEmail(emailAddress, subject, msg);
+
+}
