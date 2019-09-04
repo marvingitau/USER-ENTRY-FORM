@@ -4,7 +4,7 @@ function doGet(e) {
 }
 
 function Foo(arg,mail,no){
-  var adminMail="marvingitau96@gmail.com";
+  var adminMail="kagai@legibra.com";
   var url = "https://docs.google.com/spreadsheets/d/123iCAHGTP7MV_a0kg-pbM34S_EiVQqdyZ9Ph_brnxHs/edit#gid=0";
   var ss = SpreadsheetApp.openByUrl(url);
   var sn = ss.getSheetByName("data");
